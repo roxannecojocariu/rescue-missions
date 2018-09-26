@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  before_action :authorize_user, except: [:index, :show]
+
   def index
     @questions = Question.all.order(created_at: :desc)
   end
@@ -49,6 +51,13 @@ class QuestionsController < ApplicationController
   end
 
   private
+
+  def authorize_user
+  if !user_signed_in || !current_user.admin?
+    flash[:notice] = "You do not have access to this page."
+    redirect_to root_path
+  end
+end
 
   def question_params
     params.require(:question).permit(:title, :description, :user)
