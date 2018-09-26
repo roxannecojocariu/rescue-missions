@@ -10,10 +10,10 @@
          %></p>
 
   <% if @answers.any? %>
-    <h1><%= "Answers" %> </h1>
+    <div class='show-heading'><%= "Answers" %> </div>
     <% @answers.each do |answer| %>
       <li><%= answer.description %></li>
-      <%= answer.user.email %>
+      <%= "Answered by: #{answer.user.email}" %>
     <% end %>
   <% end %><p><br>
 
