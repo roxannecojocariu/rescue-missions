@@ -1,26 +1,33 @@
-<p>
-  <h1><%= @question.title %></h1>
+<div class='show-heading'><%= @question.title %></div><br>
+
+<div class='show'>
   <%= @question.description %><p>
-      <%= link_to 'Edit Question', edit_question_path(@question) %><p>
+      <%= link_to 'Edit Question', edit_question_path(@question) %> ||
       <%= link_to 'Delete Question',
       question_path(@question),
             method: :delete,
             data: { confirm: 'Are you sure?'}
          %></p>
-</p>
- <% if @answers.any? %>
-  <h1><%= "Answers" %> </h1>
-  <% @answers.each do |answer| %>
-    <li><%= answer.description %></li>
-    <%= answer.user.email %>
+
+  <% if @answers.any? %>
+    <div class='show-heading'><%= "Answers" %> </div>
+    <% @answers.each do |answer| %>
+      <li><%= answer.description %></li>
+      <%= "Answered by: #{answer.user.email}" %>
+    <% end %>
+  <% end %><p><br>
+
+  <div class='form'>
+    <div class='new-answer-heading'>
+      <%= 'Submit New Answer:' %>
+    </div>
+
+  <%= form_for [@question, @answer] do |f| %>
+    <div class="field">
+      <%= f.text_field :description, class: 'form-labels' %>
+    <div class="actions">
+      <%= f.submit "Submit Answer", :class => "form-buttons" %>
+    </div>
   <% end %>
-<% end %><p><br>
- <!-- Form for new answer lives here -->
-<h3>Submit New Answer: </h3>
-<%= form_for [@question, @answer] do |f| %>
-  <div class="field">
-    <%= f.text_field :description %>
-  <div class="actions">
-    <%= f.submit %>
   </div>
-<% end %>
+</div>

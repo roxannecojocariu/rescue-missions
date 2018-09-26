@@ -1,13 +1,15 @@
 <%= form_for @question do |f| %>
   <div class="field">
     <%= f.label :title %> <br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-labels' %>
   </div>
-   <div class="field">
+
+  <div class="field">
     <%= f.label :description %> <br />
-    <%= f.text_field :description %>
+    <%= f.text_field :description, class: 'form-labels' %>
   </div>
-   <div class="actions">
-    <%= f.submit %>
+
+  <div class="actions">
+    <%= f.submit "Submit Question", :class => "form-buttons" %>
   </div>
 <% end %>

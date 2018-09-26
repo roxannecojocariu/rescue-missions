@@ -1,3 +1,10 @@
-<h1>New Question</h1>
- <%= render 'form', question: @question %>
- <%= link_to 'Back', questions_path %>
+<div class='form'>
+  <div class='heading'>
+    <%= 'New Question' %>
+  </div></br>
+
+  <%= render 'form', question: @question %></br>
+
+  <%= link_to 'Back', questions_path, class: 'back' %>
+
+</div>

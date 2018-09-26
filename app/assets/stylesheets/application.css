@@ -15,3 +15,16 @@
  *= require foundation_and_overrides
 
  */
+
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+body{
+  background-color: #A1B0AB;
+  font-family: 'Varela Round';
+  color: #D5ECD4
+}
+
+.flash{
+  background: #D5ECD4;
+  color: #6B6054;
+}
