@@ -46,6 +46,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'valid_attribute'
   gem 'shoulda'
+  gem 'faker'
 end
 
 group :development do
