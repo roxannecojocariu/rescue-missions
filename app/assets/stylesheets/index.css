@@ -1,0 +1,14 @@
+.top-bar .name h1 a:hover{
+  color: #D5ECD4;
+}
+
+.index{
+  font-weight: 500;
+  font-size: 2.5em;
+  margin: 3% 5% 5% 1%;
+  text-align: left;
+}
+
+.links{
+  font-size: .5em;
+}
