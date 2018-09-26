@@ -1,0 +1,26 @@
+<p>
+  <h1><%= @question.title %></h1>
+  <%= @question.description %><p>
+      <%= link_to 'Edit Question', edit_question_path(@question) %><p>
+      <%= link_to 'Delete Question',
+      question_path(@question),
+            method: :delete,
+            data: { confirm: 'Are you sure?'}
+         %></p>
+</p>
+ <% if @answers.any? %>
+  <h1><%= "Answers" %> </h1>
+  <% @answers.each do |answer| %>
+    <li><%= answer.description %></li>
+    <%= answer.user.email %>
+  <% end %>
+<% end %><p><br>
+ <!-- Form for new answer lives here -->
+<h3>Submit New Answer: </h3>
+<%= form_for [@question, @answer] do |f| %>
+  <div class="field">
+    <%= f.text_field :description %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
