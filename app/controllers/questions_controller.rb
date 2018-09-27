@@ -53,10 +53,10 @@ class QuestionsController < ApplicationController
   private
 
   def authorize_user
-  if !user_signed_in || !current_user.admin?
-    flash[:notice] = "You do not have access to this page."
-    redirect_to root_path
-  end
+    if !user_signed_in?
+      flash[:notice] = "You do not have access to this page."
+      redirect_to root_path
+    end
 end
 
   def question_params
