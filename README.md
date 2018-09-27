@@ -1,24 +1,7 @@
-# README
+Collaboratively built, simple rails app that let's users ask and answer questions.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby Version - 2.3.3
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+An unsigned in user can see questions that have been posted and answers.
+A user must sign up or sign in, in order to post a new question or answer.
+A user can edit and delete their own questions.
